@@ -20,32 +20,26 @@ class MyApp extends StatelessWidget {
     // also learn about many other widgets!
     return MaterialApp(
       title: 'Flutter First App',
-      theme: ThemeData(useMaterial3: true),
+      theme: ThemeData(
+          colorScheme: const ColorScheme.dark(
+              primary: Colors.black12, secondary: Colors.blue)),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Welcome to Flutter'),
+          title: const Text('Welcome to Siva\'s First Flutter App'),
         ),
         body: Container(
           width: double.infinity,
           padding: const EdgeInsets.all(12),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: const [
-              Text(
-                'Flutter - The Complete Guide',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Learn Flutter step-by-step, from the ground up.',
-                textAlign: TextAlign.center,
-              ),
-            ],
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(colors: [
+            Color.fromARGB(255, 237, 137, 6),
+            Color.fromARGB(255, 255, 255, 0),
+          ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
+          child: const Center(
+            child: Text(
+              "Hello World!",
+              style: TextStyle(color: Colors.white, fontSize: 28),
+            ),
           ),
         ),
       ),
