@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 
-class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key});
+import 'style_text.dart';
 
+const topAlignment = Alignment.topLeft;
+const bottomAlignment = Alignment.bottomRight;
+
+class GradientContainer extends StatelessWidget {
+  GradientContainer(
+      {super.key,
+      required this.colors}); //By Default named arguments are optional for default use []
+  final List<Color>
+      colors; //final takes the computed value unlike const that is in compile time, improves performance
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(12),
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: [
-        Color.fromARGB(255, 237, 137, 6),
-        Color.fromARGB(255, 255, 255, 0),
-      ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
-      child: const Center(
-        child: Text(
-          "Hello World!",
-          style: TextStyle(color: Colors.white, fontSize: 28),
-        ),
-      ),
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors: colors, begin: topAlignment, end: bottomAlignment)),
+      child: Center(child: StyledText('Hello World!')),
     );
   }
 }
