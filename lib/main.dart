@@ -29,11 +29,6 @@ class MyApp extends StatelessWidget {
             appBar: AppBar(
               title: const Text('Welcome to Siva\'s First Flutter App'),
             ),
-            body: GradientContainer(
-              colors: const [
-                Color.fromARGB(255, 237, 137, 6),
-                Color.fromARGB(255, 255, 255, 0)
-              ],
-            )));
+            body: const GradientContainer.orange()));
   }
 }
